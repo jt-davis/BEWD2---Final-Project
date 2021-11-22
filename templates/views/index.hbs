@@ -1,0 +1,90 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<link rel="stylesheet" href="/css/styles.css" />
+        {{!-- <link rel="stylesheet" href="/css/bootstrap.css" /> --}}
+        <script src="js/app.js"></script>
+        {{!-- <script src="/js/jquery.js"></script>
+        <script src="/node_modules/popper.js/dist/popper.js"></script>
+        <script src="/js/bootstrap.js"></script> --}}
+
+	</head>
+	<body>
+		{{>header}}
+        <div class="container mt-5">
+        <div class="row">
+            <div class="col border-right">
+		<form>
+            <div class="mb-3">
+                <label for="dateInput" class="form-label"><h2>Date</h2></label>
+                <input type="text" class="form-control" id="dateInput">
+                <div class="form-text">The date should be automatically populated.</div>
+            </div>
+            <div class="mb-3">
+                <label for="weatherInput" class="form-label"><h2>Weather</h2></label>
+                <textarea rows="3" class="form-control" id="weatherInput"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="clothesInput" class="form-label"><h2>Clothes Worn</h2></label>
+                <textarea rows="3" class="form-control" id="clothesInput"></textarea>
+            </div>
+            <div class="row">
+            <div class="mb-3 form-check d-inline-block col justify-content-center">
+                <input type="radio" name="hotOrCold" class="form-check-input" id="hotColdInput">
+                <label class="form-check-label pr-5" for="hotColdInput">Too Hot</label>
+            </div>
+            <div class="mb-3 form-check d-inline-block col justify-content-center">
+                <input type="radio" name="hotOrCold" class="form-check-input" id="hotColdInput2">
+                <label class="form-check-label ml-5" for="hotColdInput2">Just Right</label>
+            </div>
+            <div class="mb-3 form-check d-inline-block col">
+                <input type="radio" name="hotOrCold" class="form-check-input" id="hotColdInput3">
+                <label class="form-check-label pr-5" for="hotColdInput3">Too Cold</label>
+            </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Add Data</button>
+        </form>
+        </div>
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Weather</th>
+                    <th scope="col">Clothes</th>
+                    <th scope="col">Hot or Cold</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">Nov. 3rd</th>
+                    <td>Cloudy 50 Degrees</td>
+                    <td>Jacket</td>
+                    <td>Too Cold</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Oct. 26th</th>
+                    <td>Sunny 73 Degrees</td>
+                    <td>T-Shirt and Shorts</td>
+                    <td>Just Right</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Sep. 30th</th>
+                    <td>Rainy 78 Degrees</td>
+                    <td>T-Shirt and Shorts</td>
+                    <td>Too Hot</td>
+                    </tr>
+                </tbody>
+                </table>
+        </div></div></div>
+		{{>footer}}
+        <script>
+            const d = new Date();
+            document.getElementById("dateInput").value = d;
+        </script>
+	</body>
+</html>
